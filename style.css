@@ -12,7 +12,7 @@ body {
 }
 
 section{
-    background-color: #556B2F;
+    background-color: #344a0e;
 }
 
 img{
@@ -43,7 +43,7 @@ div{
     height: 300px;
     border: solid;
     border: 2px;
-    border: outset #556B2F;
+    border: outset antiquewhite;
     border-width: 2px;
 }
 
@@ -59,8 +59,8 @@ div{
 }
 
 #gewaechshaus {
-    background-color: #FFF0F5;
-    color: #556B2F;
+    background-color: #ed7c2c;
+    color: antiquewhite;
     
 }
 
@@ -100,30 +100,72 @@ audio {
 }
 
 #lauschen{
-    background-color: #FFF0F5;
-    color: #556B2F;
+    background-color: #ed7c2c;
+    color: antiquewhite;
 }
 
-@keyframe lauschen {
+@keyframes lauschen {
   10% {
-    background-color: #9D8771;
+    background-color: #b6438a;
   }
   50% {
-    background-color: #004E9D;
+    background-color:  #5d0c45;
   }
   100% {
-    background-color: #BCB1AA;
+    background-color: #0b3e71;
   }
 }
 
 .lausch-animation {
-  …
   animation: lauschen 10s infinite;
-  …
 }
 
-"github.copilot.enable": {
-        "*": false
-    },
+.seiten-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: white;
+  border-bottom: 1px solid var(--rahmen-farbe);
+  padding: 0.75rem 1rem;
+}
 
+.seiten-navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
 
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.seiten-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: white;
+  border-bottom: 1px solid var(--rahmen-farbe);
+  padding: 0.75rem 1rem;
+}
+
+.seiten-navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+section[id] {
+  scroll-margin-top: 6rem;
+}
