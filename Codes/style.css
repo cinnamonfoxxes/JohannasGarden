@@ -9,7 +9,7 @@
 body {
     font-family: "Courier New", Arial, Helvetica, sans-serif;
     color: antiquewhite;
-    background-image: url("/Pictures/WebsiteBackground.png");
+    background-image: url("/Pictures/Background3.jpeg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,7 +18,7 @@ body {
 }
 
 img{
-    max-width: 100%;
+    max-width: 50%;
 }
 
 h1 {
@@ -98,13 +98,13 @@ audio {
 
 @keyframes lauschen {
   10% {
-    background-color: #b6438a;
+    background-color: #2d3358;
   }
   50% {
-    background-color:  #5d0c45;
+    background-color:  #334c3d;
   }
   100% {
-    background-color: #0b3e71;
+    background-color: #352846;
   }
 }
 
