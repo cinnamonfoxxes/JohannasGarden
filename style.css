@@ -38,11 +38,34 @@ section[id] {
 
 html {
   scroll-behavior: smooth;
-  cursor: grab;
 }
 
 section[id] {
   scroll-margin-top: 6rem;
+}
+
+button {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #e8d4b0;
+  color: #3d251e;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  transition: all 0.15s ease;
+}
+
+button:hover {
+  background-color: #ddc49e;
+}
+
+button:active {
+  background-color: #a67c52;
+  color: antiquewhite;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
+  transform: translateY(2px);
 }
 
 .headbar {
@@ -71,14 +94,16 @@ section[id] {
 .seiten-navigation ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.4rem;
   margin: 0;
   padding: 0;
 }
 
-.seiten-navigation h3 {
+.seiten-navigation a {
   color: #3d251e;
   text-decoration: none;
+  font-size: 1.4rem;
 }
 
 .seiten-navigation h3:visited {
@@ -163,30 +188,8 @@ audio {
   animation: lauschen 10s infinite;
 }
 
-.vollbild {
-  padding: 0.6rem 1.5rem;
-  border: none;
-  border-radius: 12px;
-  background-color: #e8d4b0;
-  color: #3d251e;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.5);
-  transition: all 0.15s ease;
-}
-
-.vollbild:hover {
-  background-color: #ddc49e;
-}
-
-.vollbild:active {
-  background-color: #a67c52;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
-  transform: translateY(2px);
-}
-
 .mainframe {
-  width: 700px;
+  max-width: 700px;
   height: 700px;
   padding: 0.5rem 1.5rem;
   border-radius: 20px;
@@ -259,28 +262,9 @@ input::placeholder, textarea::placeholder {
   color: #795434;
 }
 
-button {
-  padding: 0.6rem 1.5rem;
-  border: none;
-  border-radius: 12px;
-  background-color: #e8d4b0;
-  color: #3d251e;
-  font-family: inherit;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.5);
-  transition: all 0.15s ease;
-}
-
-button:hover {
-  background-color: #ddc49e;
-}
-
-button:active {
-  background-color: #a67c52;
-  color: antiquewhite;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
-  transform: translateY(2px);
+#darkmode-toggle img {
+  width: 6rem;
+  height: auto;
 }
 
 :root {
@@ -307,6 +291,69 @@ html[data-theme=dark] {
 html[data-theme=light] {
   --bg: #BDB76B;
   --text: #222;
+}
+
+#navigation-toggle {
+  display: none;
+}
+@media (max-width: 800px) {
+  #navigation-toggle {
+    display: flex;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 3;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 800px) {
+  .seiten-navigation {
+    position: fixed;
+    top: 100dvh;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    visibility: hidden;
+    transition: translate 300ms, visibility 300ms;
+    background: white;
+    padding: 1.5rem;
+  }
+  .seiten-navigation ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: unset;
+    text-align: center;
+  }
+  .seiten-navigation li:last-child {
+    align-self: start;
+    margin-top: 1em;
+  }
+  .seiten-navigation a {
+    display: block;
+    padding: 1em;
+  }
+  [nav-sichtbar] .seiten-navigation {
+    translate: 0 -100%;
+    visibility: visible;
+  }
+}
+#navigation-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 300ms, visibility 300ms;
+}
+
+[nav-sichtbar] #navigation-overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -89,3 +89,21 @@ darkmodeButton.addEventListener('click', function () {
   localStorage.setItem(storageKey, naechstesTheme);
 });
 
+//mobile Ansicht
+const button = document.getElementById('navigation-toggle');
+const overlay = document.getElementById('navigation-overlay');
+const navigationLinks = document.querySelectorAll('.seiten-navigation a');
+
+const schliessen = () => {
+  document.documentElement.removeAttribute('nav-sichtbar');
+  button.setAttribute('aria-expanded', 'false');
+};
+
+button.addEventListener('click', () => {
+  document.documentElement.toggleAttribute('nav-sichtbar');
+  const istOffen = document.documentElement.hasAttribute('nav-sichtbar');
+  button.setAttribute('aria-expanded', istOffen ? 'true' : 'false');
+});
+
+overlay.addEventListener('click', schliessen);
+navigationLinks.forEach(link => link.addEventListener('click', schliessen));
