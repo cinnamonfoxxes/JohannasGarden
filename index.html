@@ -27,7 +27,7 @@
                     <a href="#My Reads">my reads</a>
                 </li>
                 <li>
-                    <button id="darkmode-toggle" type="button"><img src="moon.png" alt="moon icon"></button>
+                    <button id="darkmode-toggle" type="button"><img src="moon.svg" alt="moon icon"></button>
                 </li>
             </ul>
         </nav>
@@ -82,7 +82,7 @@
                     <div class="swiper-slide">
                         <img src="1.png" alt="ein kindle">
                         <p>
-                            my stories to forget about the world
+                            my garden stories
                         </p>
                         </figure>
                     </div>
@@ -90,7 +90,7 @@
                         <figure>
                             <img src="2.png" alt="Sony headphones">
                             <p>
-                                my emotional support headphones
+                                garden noise
                             </p>
                         </figure>
                     </div>
@@ -113,14 +113,16 @@
     </section>
 
 
-    <section id="lauschen">
+    <section id="lauschen" class="abschnitt">
         <div class="inner-wrapper">
             <h2>⭒｡꩜˚Enjoy the silence˚꩜｡⭒</h2>
-            <div class="lausch-animation"></div>
-            <audio controls src="Garten Sound.m4a"></audio>
-            <a href="Garten Sound.m4a"></a>
+            <div class="lausch-animation" aria-hidden="true"></div>
+
+            <figure>
+                <audio id="lauschen-audio" src="Garten Sound.m4a" controls></audio>
             </figure>
-            <button class="vollbild">Vollbild</button>
+
+            <button type="button" class button="button-vollbild" aria-pressed="false">Vollbild</button>
         </div>
     </section>
 
@@ -332,9 +334,9 @@
     <section id="book recommendations">
         <div class="inner-wrapper">
             <h2>⭒｡꩜˚Tell me about your favourite book˚꩜｡⭒</h2>
-            <form action="https://formspree.io/f/xgobqlwv" method="POST">
+            <form action="https://formspree.io/f/xgobqlwv" method="POST"> 
                 <input type="text" name="buch" placeholder="Titel" required>
-                <input type="text" name="autor" placeholder="Author (optional)">
+                <input type="text" name="author" placeholder="Author (optional)">
                 <textarea name="nachricht" placeholder="Additional Info" rows="4"></textarea>
                 <button type="submit">Send</button>
             </form>

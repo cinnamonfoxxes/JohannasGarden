@@ -6,13 +6,8 @@
 }
 body {
   font-family: "Times New Roman", Arial, Helvetica, sans-serif;
-  color: #3d251e;
   background-color: var(--bg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: auto;
-  width: 100vw;
 }
 
 img {
@@ -45,7 +40,7 @@ section[id] {
 }
 
 button {
-  padding: 0.6rem 1.5rem;
+  padding: 0.4rem 1rem;
   border: none;
   border-radius: 12px;
   background-color: #e8d4b0;
@@ -122,7 +117,7 @@ button:active {
 
 .swiper {
   width: 100%;
-  height: 400px;
+  height: auto;
   border: solid;
   border: 2px;
   border: outset antiquewhite;
@@ -133,18 +128,25 @@ button:active {
 }
 
 .swiper img {
-  width: 35%;
+  width: 70%;
   height: auto;
 }
 
 .swiper-slide {
-  width: 30%;
-  height: 30%;
+  width: 100%;
+  height: auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2.5rem;
+  margin-bottom: 2.5rem;
+  box-sizing: border-box;
 }
 
 .lausch-animation {
-  width: 100%;
+  width: auto;
   height: 300px;
   background-color: gray;
   padding: 0.5rem 1.5rem;
@@ -152,7 +154,7 @@ button:active {
   margin-bottom: 10px;
 }
 
-#lauschen.vollbild .lausch-animation {
+.lauschen.animation .lausch-animation {
   position: fixed;
   top: 0;
   left: 0;
@@ -195,7 +197,7 @@ audio {
   border-radius: 20px;
   z-index: 1000;
   overflow-y: scroll;
-  color: #3d251e;
+  color: var(--text);
   margin: 0 auto;
   border: 1px solid #3d251e;
 }
@@ -256,6 +258,11 @@ input, textarea {
   border-radius: 8px;
   background-color: antiquewhite;
   color: #3d251e;
+  font-family: "Times New Roman";
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #795434;
 }
 
 input::placeholder, textarea::placeholder {
@@ -263,8 +270,9 @@ input::placeholder, textarea::placeholder {
 }
 
 #darkmode-toggle img {
-  width: 6rem;
+  width: 3rem;
   height: auto;
+  align-content: center;
 }
 
 :root {
@@ -301,7 +309,7 @@ html[data-theme=light] {
     display: flex;
     position: fixed;
     right: 1rem;
-    bottom: 1rem;
+    bottom: 1.5rem;
     z-index: 3;
     font-size: 18px;
     cursor: pointer;
@@ -354,6 +362,4 @@ html[data-theme=light] {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

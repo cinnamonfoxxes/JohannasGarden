@@ -1,3 +1,4 @@
+//Swiper
 const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
@@ -21,8 +22,6 @@ const swiper = new Swiper('.swiper', {
 });
 
 //lauschen
-
-// Variablen 
 const audio = document.querySelector("#lauschen-audio");
 const animation = document.querySelector(".lausch-animation");
 const vollbildButton = document.querySelector(".button-vollbild");
