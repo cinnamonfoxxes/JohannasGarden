@@ -24,42 +24,15 @@ const swiper = new Swiper('.swiper', {
 //lauschen
 const audio = document.querySelector("#lauschen-audio");
 const animation = document.querySelector(".lausch-animation");
-const vollbildButton = document.querySelector(".button-vollbild");
+const vollbildButton = document.querySelector("#button-vollbild");
 
 if (audio && animation && vollbildButton) {
-  audio.addEventListener("play", () => {
-    animation.classList.add("is-playing");
-  });
-
-  audio.addEventListener("pause", () => {
-    animation.classList.remove("is-playing");
-  });
-
-  audio.addEventListener("ended", () => {
-    animation.classList.remove("is-playing");
-  });
-
   vollbildButton.addEventListener("click", async () => {
     const istVollbild = animation.classList.toggle("is-fullscreen");
-    vollbildButton.setAttribute("aria-pressed", String(istVollbild));
-    vollbildButton.textContent = istVollbild ? "Vollbild verlassen" : "Vollbild";
+  });
 
-    // Optional: echter Browser-Vollbildmodus als Zusatz
-    if (!document.fullscreenEnabled) {
-      return;
-    }
-
-    try {
-      if (istVollbild && document.fullscreenElement !== animation) {
-        await animation.requestFullscreen();
-      }
-
-      if (!istVollbild && document.fullscreenElement) {
-        await document.exitFullscreen();
-      }
-    } catch {
-      // Wenn Fullscreen vom Browser blockiert wird, bleibt das CSS-Overlay aktiv.
-    }
+  animation.addEventListener("click", async () => {
+    const istVollbild = animation.classList.toggle("is-fullscreen");
   });
 }
 
